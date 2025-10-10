@@ -1,0 +1,28 @@
+programa
+{
+    funcao inicio()
+    {
+        inteiro numero, i
+        logico primo = verdadeiro
+        
+        escreva("Digite um número: ")
+        leia(numero)
+        
+        se (numero <= 1) {
+            primo = falso
+        } senao {
+            para (i = 2; i <= numero/2; i++) {
+                se (numero % i == 0) {
+                    primo = falso
+                    pare
+                }
+            }
+        }
+        
+        se (primo) {
+            escreva(numero, " é um número primo\n")
+        } senao {
+            escreva(numero, " não é um número primo\n")
+        }
+    }
+}
