@@ -1,0 +1,36 @@
+programa
+{
+    funcao inicio()
+    {
+        inteiro numeroSecreto, palpite, tentativas = 0
+        inteiro maxTentativas = 5
+        
+        // Gerar número aleatório entre 1 e 50
+        numeroSecreto = (inteiro)(aleatorio() * 50) + 1
+        
+        escreva("=== JOGO DE ADIVINHAÇÃO ===\n")
+        escreva("Tente adivinhar o número secreto (1-50)\n")
+        escreva("Você tem ", maxTentativas, " tentativas!\n\n")
+        
+        enquanto (tentativas < maxTentativas) {
+            tentativas++
+            escreva("Tentativa ", tentativas, "/", maxTentativas, " - Digite seu palpite: ")
+            leia(palpite)
+            
+            se (palpite == numeroSecreto) {
+                escreva("\n🎉 PARABÉNS! Você acertou em ", tentativas, " tentativa(s)!\n")
+                escreva("O número secreto era realmente ", numeroSecreto, "!\n")
+                pare
+            } senao se (palpite < numeroSecreto) {
+                escreva("Dica: O número secreto é MAIOR que ", palpite, "\n\n")
+            } senao {
+                escreva("Dica: O número secreto é MENOR que ", palpite, "\n\n")
+            }
+        }
+        
+        se (tentativas == maxTentativas) {
+            escreva("\n💀 FIM DE JOGO! Suas tentativas acabaram!\n")
+            escreva("O número secreto era: ", numeroSecreto, "\n")
+        }
+    }
+}
