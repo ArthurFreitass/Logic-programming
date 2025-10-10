@@ -1,0 +1,22 @@
+programa
+{
+    funcao inicio()
+    {
+        inteiro numero, i, somaDivisores = 0
+        
+        escreva("Digite um número: ")
+        leia(numero)
+        
+        para (i = 1; i <= numero/2; i++) {
+            se (numero % i == 0) {
+                somaDivisores = somaDivisores + i
+            }
+        }
+        
+        se (somaDivisores == numero) {
+            escreva(numero, " é um número perfeito\n")
+        } senao {
+            escreva(numero, " não é um número perfeito\n")
+        }
+    }
+}
