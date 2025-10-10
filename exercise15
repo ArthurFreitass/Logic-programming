@@ -1,0 +1,26 @@
+programa
+{
+    funcao inicio()
+    {
+        real base, resultado = 1.0
+        inteiro expoente, i
+        
+        escreva("Digite a base: ")
+        leia(base)
+        
+        escreva("Digite o expoente: ")
+        leia(expoente)
+        
+        se (expoente >= 0) {
+            para (i = 1; i <= expoente; i++) {
+                resultado = resultado * base
+            }
+        } senao {
+            para (i = 1; i <= (-expoente); i++) {
+                resultado = resultado / base
+            }
+        }
+        
+        escreva(base, " elevado a ", expoente, " = ", resultado, "\n")
+    }
+}
