@@ -1,29 +1,26 @@
-programa
-{
-    funcao inicio()
-    {
-        inteiro a, b, mmc
-        
-        escreva("Digite o primeiro número: ")
-        leia(a)
-        
-        escreva("Digite o segundo número: ")
-        leia(b)
-        
-        // MMC(a,b) = (a * b) / MDC(a,b)
-        inteiro tempA = a
-        inteiro tempB = b
-        
-        // Calculando MDC
-        enquanto (b != 0) {
-            inteiro resto = a % b
-            a = b
-            b = resto
-        }
-        inteiro mdc = a
-        
-        mmc = (tempA * tempB) / mdc
-        
-        escreva("MMC(", tempA, ", ", tempB, ") = ", mmc, "\n")
+programa {
+  funcao inicio() {
+    inteiro num1, num2, resto, mmc
+    escreva("Digite um número: ")
+    leia(num1)
+
+    escreva("Digite um número: ")
+    leia(num2)
+
+    // Calcule o mdc
+
+    inteiro aValue = num1
+    inteiro bValue = num2
+
+    enquanto (num2 != 0) {
+      resto = num1 % num2
+      //      10 / 2 = Resto 0
+      num1 = num2
+      // num1 = 10 = 2
+      num2 = resto
+      // num2 = 0 e encerra, enquanto for diferente de 0, nova repetição
     }
+    mmc = aValue * bValue / num1
+    escreva("O MMC é: ", mmc)
+  }
 }
