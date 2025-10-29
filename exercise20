@@ -1,95 +1,63 @@
 programa
 {
-    funcao logico verificarPrimo(inteiro num)
-    {
-        se (num <= 1) {
-            retorne falso
-        }
-        
-        para (inteiro i = 2; i <= num/2; i++) {
-            se (num % i == 0) {
-                retorne falso
-            }
-        }
-        retorne verdadeiro
-    }
-    
-    funcao inteiro calcularSomaNatural(inteiro n)
-    {
-        inteiro soma = 0
-        para (inteiro i = 1; i <= n; i++) {
-            soma = soma + i
-        }
-        retorne soma
-    }
-    
-    funcao exibirFibonacci(inteiro n)
-    {
-        inteiro termo1 = 0, termo2 = 1, proximo
-        escreva("Fibonacci: ", termo1, " ", termo2, " ")
-        
-        para (inteiro i = 3; i <= n; i++) {
-            proximo = termo1 + termo2
-            escreva(proximo, " ")
-            termo1 = termo2
-            termo2 = proximo
-        }
-        escreva("\n")
-    }
-    
-    funcao inteiro inverterNumero(inteiro num)
-    {
-        inteiro invertido = 0, resto
-        enquanto (num != 0) {
-            resto = num % 10
-            invertido = invertido * 10 + resto
-            num = num / 10
-        }
-        retorne invertido
-    }
-    
-    funcao inteiro calcularFatorial(inteiro num)
-    {
-        inteiro fatorial = 1
-        para (inteiro i = 1; i <= num; i++) {
-            fatorial = fatorial * i
-        }
-        retorne fatorial
-    }
-    
-    funcao inicio()
-    {
-        inteiro numero
-        
-        escreva("=== PROGRAMA DE OPERAÇÕES MATEMÁTICAS ===\n")
+    inteiro numero, i, j, soma, fatorial, a, b, c, resto, invertido, primo, cont
+
+    inicio
         escreva("Digite um número inteiro positivo: ")
         leia(numero)
-        
-        se (numero <= 0) {
-            escreva("Número inválido! Digite um número positivo.\n")
-            retorne
-        }
-        
-        escreva("\n--- RESULTADOS PARA O NÚMERO ", numero, " ---\n")
-        
-        // 1. Verificar se é primo
-        se (verificarPrimo(numero)) {
-            escreva("✓ É um número primo\n")
-        } senao {
-            escreva("✗ Não é um número primo\n")
-        }
-        
-        // 2. Soma dos números naturais
-        escreva("✓ Soma dos naturais até ", numero, ": ", calcularSomaNatural(numero), "\n")
-        
-        // 3. Sequência de Fibonacci
-        escreva("✓ ")
-        exibirFibonacci(numero)
-        
-        // 4. Inverter número
-        escreva("✓ Número invertido: ", inverterNumero(numero), "\n")
-        
-        // 5. Fatorial
-        escreva("✓ Fatorial: ", calcularFatorial(numero), "\n")
-    }
+
+        // Verificar se o número é primo
+        primo <- 1 // 1 significa que é primo até provar o contrário
+        se (numero < 2) entao
+            primo <- 0
+        senao
+            para (i <- 2; i <= numero / 2; i <- i + 1)
+                se (numero % i = 0) entao
+                    primo <- 0
+                fimse
+            fimpara
+        fimse
+
+        se (primo = 1) entao
+            escreva("O número ", numero, " é primo.", "\n")
+        senao
+            escreva("O número ", numero, " não é primo.", "\n")
+        fimse
+
+        // Calcular a soma dos números naturais até o número
+        soma <- 0
+        para (i <- 1; i <= numero; i <- i + 1)
+            soma <- soma + i
+        fimpara
+        escreva("A soma dos números naturais até ", numero, " é ", soma, "\n")
+
+        // Exibir os primeiros N termos da sequência de Fibonacci
+        escreva("Os primeiros ", numero, " termos da sequência de Fibonacci: ")
+        a <- 0
+        b <- 1
+        escreva(a, " ", b, " ")
+        para (i <- 3; i <= numero; i <- i + 1)
+            c <- a + b
+            escreva(c, " ")
+            a <- b
+            b <- c
+        fimpara
+        escreva("\n")
+
+        // Inverter os dígitos do número
+        invertido <- 0
+        resto <- numero
+        enquanto (resto > 0)
+            invertido <- invertido * 10 + (resto % 10)
+            resto <- resto / 10
+        fimenquanto
+        escreva("O número invertido é: ", invertido, "\n")
+
+        // Calcular o fatorial do número
+        fatorial <- 1
+        para (i <- 1; i <= numero; i <- i + 1)
+            fatorial <- fatorial * i
+        fimpara
+        escreva("O fatorial de ", numero, " é ", fatorial, "\n")
+    fim
 }
