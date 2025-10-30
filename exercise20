@@ -1,1 +1,65 @@
-// Bo refazer
+programa
+{
+    funcao inicio()
+    {
+        inteiro num, i, j, soma, fatorial, a, b, prox, invertido, resto
+        logico primo
+
+        escreva("Digite um número inteiro positivo: ")
+        leia(num)
+
+        // Verificar se é primo
+        primo = verdadeiro
+        se (num <= 1) {
+            primo = falso
+        } senao {
+            para (i = 2; i <= num / 2; i++) {
+                se (num % i == 0) {
+                    primo = falso
+                }
+            }
+        }
+
+        se (primo) {
+            escreva("\nO número é primo.\n")
+        } senao {
+            escreva("\nO número não é primo.\n")
+        }
+
+        // Soma dos números naturais até o número
+        soma = 0
+        para (i = 1; i <= num; i++) {
+            soma = soma + i
+        }
+        escreva("Soma dos números naturais até ", num, ": ", soma, "\n")
+
+        // --- Sequência de Fibonacci com N termos ---
+        escreva("Sequência de Fibonacci com ", num, " termos:\n")
+        a = 0
+        b = 1
+        para (i = 1; i <= num; i++) {
+            escreva(a, " ")
+            prox = a + b
+            a = b
+            b = prox
+        }
+        escreva("\n")
+
+        // Inverter os dígitos do número
+        invertido = 0
+        resto = num
+        enquanto (resto > 0) {
+            invertido = invertido * 10 + (resto % 10)
+            resto = resto / 10
+        }
+        escreva("Número invertido: ", invertido, "\n")
+
+        // Calcular o fatorial
+        fatorial = 1
+        para (i = 1; i <= num; i++) {
+            fatorial = fatorial * i
+        }
+        escreva("Fatorial de ", num, ": ", fatorial, "\n")
+    }
+}
+
