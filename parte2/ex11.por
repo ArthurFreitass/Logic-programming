@@ -1,23 +1,13 @@
 programa {
     funcao inicio() {
-        real peso, altura, imc
+        inteiro numero
 
-        escreva("Digite o peso (kg): ")
-        leia(peso)
+        escreva("Digite um número para ver a tabuada: ")
+        leia(numero)
 
-        escreva("Digite a altura (m): ")
-        leia(altura)
-
-        imc = peso / (altura * altura)
-
-        se (imc < 18.5) {
-            escreva("Abaixo do Peso")
-        }
-        senao se (imc >= 18.5 e imc < 25) {
-            escreva("Peso Ideal")
-        }
-        senao {
-            escreva("Sobrepeso")
+        para (inteiro i = 1; i <= 10; i++) {
+            escreva(numero, " x ", i, " = ", numero * i)
+            escreval("") // Para pular linha
         }
     }
 }
