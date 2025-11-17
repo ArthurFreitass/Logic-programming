@@ -13,7 +13,7 @@ programa {
         se (media >= 7.0) {
             escreva("Aprovado")
         }
-        senao se (media >= 5.0 && media < 7.0) {
+        senao se (media >= 5.0 e media < 7.0) {
             escreva("Recuperação")
         }
         senao {
