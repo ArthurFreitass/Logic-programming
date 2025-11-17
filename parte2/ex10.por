@@ -1,19 +1,23 @@
 programa {
     funcao inicio() {
-        inteiro idade
-        cadeia comorbidade
+        real peso, altura, imc
 
-        escreva("Digite a idade do paciente: ")
-        leia(idade)
+        escreva("Digite o peso (kg): ")
+        leia(peso)
 
-        escreva("O paciente possui comorbidade? (sim/nao): ")
-        leia(comorbidade)
+        escreva("Digite a altura (m): ")
+        leia(altura)
 
-        se (idade >= 65 ou comorbidade == "sim") {
-            escreva("Atendimento Prioritário")
+        imc = peso / (altura * altura)
+
+        se (imc < 18.5) {
+            escreva("Abaixo do Peso")
+        }
+        senao se (imc >= 18.5 e imc < 25) {
+            escreva("Peso Ideal")
         }
         senao {
-            escreva("Atendimento Normal")
+            escreva("Sobrepeso")
         }
     }
 }
