@@ -7,6 +7,7 @@ programa {
   }
 
   funcao vazio displayingMatrix(inteiro matrix[][], inteiro length) {
+    userInterface()
     para (inteiro index = 0; index < length; index += 1) {
       para (inteiro i = 0; i < length; i += 1) {
         escreva(matrix[index][i], "\t")
