@@ -1,9 +1,9 @@
 programa {
 
-    funcao userInterface() {
+  funcao userInterface() {
     escreva("PROGRAMA - VETORES\n")
     escreva("======================\n\n")
-    escreva("Número de vezes que um número aparece na matriz\n\n")
+    escreva("Soma da diagonal principal da matriz\n\n")
   }
 
   funcao inteiro sumMatrixDiagonal(inteiro matrix[][]) {
