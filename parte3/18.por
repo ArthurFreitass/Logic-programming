@@ -3,7 +3,7 @@ programa {
   funcao userInterface() {
     escreva("PROGRAMA - VETORES\n")
     escreva("======================\n\n")
-    escreva("Retornar a soma de elementos da matriz\n\n")
+    escreva("Retornar a soma da linha da matriz\n\n")
   }
 
   funcao vazio sumRowMatrix(inteiro matrix[][], inteiro rowNum) {
