@@ -8,7 +8,7 @@ programa {
     escreva("CONTROLE DE ESTOQUE\n\n")
   }
 
-    funcao cadeia loadStock(cadeia arrayName[], real arrayPrice[]) {
+    funcao cadeia loadStockNames(cadeia arrayName[], real arrayPrice[]) {
       escreva("\nENTRE COM UM NOME PARA CADA PRODUTO\n")
       escreva("=====================================\n\n")
 
@@ -19,6 +19,39 @@ programa {
         limpa()
       }
       retorne arrayName
+    }
+
+      funcao real loadStockProducts(real arrayStock[]) {
+      escreva("\nENTRE COM UM O NÚMERO DE PRODUTOS EM ESTOQUE DE CADA PRODUTO\n")
+      escreva("==============================================================\n\n")
+
+      // Devo salvar os valores em um vetor
+      para (inteiro index = 0; index <= 4; index += 1) {
+        escreva("Digite a quantidade em estoque do ",index + 1, "º produto: ")
+        leia(arrayStock[index])
+        limpa()
+        se (arrayStock[index] < 0) {
+          arrayStock[index] = 0
+        }
+      }
+      retorne arrayStock
+    }
+
+
+      funcao real loadStockPrices(real arrayPrice[]) {
+      escreva("\nENTRE COM UM PREÇO PARA CADA PRODUTO\n")
+      escreva("=====================================\n\n")
+
+      // Devo salvar os valores em um vetor
+      para (inteiro index = 0; index <= 4; index += 1) {
+          escreva("Digite o preço ",index + 1, "º produto: ")
+          leia(arrayPrice[index])
+          limpa()
+          se (arrayPrice[index] <= 0) {
+          arrayPrice[index] = 1
+        }
+      }
+      retorne arrayPrice
     }
 
     funcao consultProducts(cadeia name, cadeia array[]) {
@@ -36,6 +69,10 @@ programa {
       // PRECISA EXIBIR O NOME E O PREÇO
       
     } 
+
+    /*funcao menu(cadeia arrayNames[], inteiro arrayProducts, arrayPrice[]) {
+
+    }*/
 
   funcao inicio() {
     /*26. Controle de Estoque:
