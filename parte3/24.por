@@ -6,14 +6,6 @@ programa {
     escreva("EXIBIR UMA MATRIX TRANSPOSTA\n\n")
   }
 
-  funcao traverseMatrix(inteiro matrix[][], inteiro rowNum, inteiro columnNum) {
-     para (inteiro index = 0; index < rowNum; index += 1) {
-      para (inteiro i = 0; i < columnNum; i += 1) {
-        escreva(newMatrix[index][i], "\t")
-      }
-      escreva("\n")
-    }
-  }
 
   funcao vazio transposedMatrices(inteiro matrix[][], inteiro rowNum, inteiro columnNum) {
     // Criar uma matrix invertendo
@@ -28,14 +20,21 @@ programa {
     }
 
     escreva("Matriz original: \n")
-    traverseMatrix(matrix[rowNum][columnNum])
+       para (inteiro index = 0; index < 4; index += 1) {
+        para (inteiro i = 0; i < 3; i += 1) {
+        escreva(matrix[index][i], "\t")
+        }
+        escreva("\n")
+       }
 
-    /*    para (inteiro index = 0; index < columnNum; index += 1) {
+      escreva("\nMatriz Transposta: \n")
+
+      para (inteiro index = 0; index < columnNum; index += 1) {
       para (inteiro i = 0; i < rowNum; i += 1) {
         escreva(newMatrix[index][i], "\t")
       }
       escreva("\n")
-    }*/
+    }
   }
 
   funcao inicio() {
@@ -43,7 +42,7 @@ programa {
 B (ex: 4x3). O procedimento deve preencher B como a transposta de A (onde
 B[c][l] = A[l][c]).*/
 
-    inteiro matrix[4][3] = {{1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}}
+    inteiro matrix[4][3] = {{1,2,3}, {4,5,6}, {7,8,9}, {0,1,2}}
     userInterface()
 
     transposedMatrices(matrix, 4, 3)
